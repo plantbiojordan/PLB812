@@ -1,0 +1,24 @@
+Jordan Manchego's Methods for PLB812 Lab Assignment 1
+
+1. I used the Phytozome online resource available through the Joint Genome Institute (JGI)
+to download the metadata for my assigned species, Solanum tuberosum (cultivar: Oberon), to
+the MSU HPCC in my PLB812/data directory using the command
+
+curl --cookie jgi_session=/api/sessions/bb24da64af2d7dea663c65cdb645da54 --output download.20220915.211645.zip -d "{\"ids\":{\"Phytozome-686\":[\"60bfb634c399d4ad32fd4835\",\"60bfb635c399d4ad32fd483d\",\"60bfb635c399d4ad32fd4841\",\"60bfb635c399d4ad32fd4843\",\"60bfb635c399d4ad32fd483e\",\"60bfb634c399d4ad32fd4839\",\"60bfb635c399d4ad32fd483c\",\"60bfb635c399d4ad32fd483f\",\"60bfb634c399d4ad32fd4834\",\"60bfb634c399d4ad32fd4837\",\"60bfb635c399d4ad32fd483b\",\"60bfb634c399d4ad32fd4838\",\"60bfb634c399d4ad32fd4836\",\"60bfb634c399d4ad32fd483a\",\"60bfb635c399d4ad32fd4840\",\"60bfb635c399d4ad32fd4842\"]}}" -H "Content-Type: application/json" https://files.jgi.doe.gov/filedownload/
+
+as recommended by the Phytozome website.
+
+2. I unzipped the compressed .zip file using the command 'unzip', then expanded compressed 
+.gz files in the subdirectories Phytozome/PhytozomeV13/Stuberosum/v6.1/assembly and "/annotation 
+using the command 'gunzip'.
+
+3. I downloaded the accession list for the Oberon sequences and placed the .txt file in PLB812/data
+
+4. I tried using 'prefetch' with a few different SRR numbers but was not successful bringing them
+onto the hpcc. I'm going to keep troubleshooting this and ask on Monday if anyone else had the same issue.
+
+Here is the error I got:
+
+2022-09-18T18:10:33 prefetch.2.8.0 sys: connection failed while opening file within cryptographic module - mbedtls_ssl_handshake returned -9984 ( X509 - Certificate verification failed, e.g. CRL, CA or signature check failed )
+2022-09-18T18:10:33 prefetch.2.8.0 sys: mbedtls_ssl_get_verify_result returned 0x8 (  !! The certificate is not correctly signed by the trusted CA  )
+2022-09-18T18:10:33 prefetch.2.8.0 err: path not found while resolving tree within virtual file system module - 'SRR5448191' cannot be found.

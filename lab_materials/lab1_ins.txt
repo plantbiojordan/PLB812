@@ -48,7 +48,41 @@ __Be sure to list the accessions for the downloaded datasets.__
 3. Push your PLB812 repository to github.
 
 
+
+
 Dataset: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA382846
 Reference: https://onlinelibrary.wiley.com/doi/10.1111/pbi.12800
+
+
+
+
+D2L Email:
+a. In the attached excel sheet I have assigned you a dataset. 
+These are published RNA-seq experiments. Each one of you will 
+be analyzing a distinct drought experiment with 3 control samples 
+& 3 drought samples. Next to your name is the species you will 
+using, the genotype, any notes, a link to the dataset at the NCBI 
+SRA, and a link to the original paper. Download to the cluster the 
+data assigned to you. As each of the datasets are part of a large 
+study with multiple genotypes, you will need to locate the SRRXXXXXX 
+number for the datasets you are assigned and download them. I STRONGLY 
+recommend that you use SRA-tools (discussed today and in lab 
+powerpoint) to accomplish this.
+
+b. You will need to download the genome (fa) & annotations (gff) 
+for your assigned species. I recommend doing this through Phytozome.
+
+c. Upload screenshots as described in lab1.md to your GitHub repository 
+for grading.
+
+3. Lecture 2 is now available on D2L. 
+
+4. Read the papers for next Monday.
+
+5. I will be reading through proposal topics this week and sending 
+feedback by early next week.
+
+
+
 
 ------------------------------------------------------------------------------
