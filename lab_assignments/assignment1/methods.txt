@@ -12,13 +12,20 @@ as recommended by the Phytozome website.
 .gz files in the subdirectories Phytozome/PhytozomeV13/Stuberosum/v6.1/assembly and "/annotation 
 using the command 'gunzip'.
 
-3. I downloaded the accession list for the Oberon sequences and placed the .txt file in PLB812/data
+3. I downloaded the accession list for the Oberon sequences from Phytozome and placed the .txt file in PLB812/data/S_tuberosum_oberon
 
-4. I tried using 'prefetch' with a few different SRR numbers but was not successful bringing them
-onto the hpcc. I'm going to keep troubleshooting this and ask on Monday if anyone else had the same issue.
+4. I used the sra toolkit v. 3.0.0 to prefetch SRR5448192-SRR5448198 and I still need to download 6 more but I hit my storage
+quota for the HPCC at that point and had to stop. I need to clear unnecessary files off of my home directory this weekend 
+so I can download the rest.
 
-Here is the error I got:
+5. I used fastq-dump SRR# inside the directory with my .sra files to convert them into .fastq files.
 
-2022-09-18T18:10:33 prefetch.2.8.0 sys: connection failed while opening file within cryptographic module - mbedtls_ssl_handshake returned -9984 ( X509 - Certificate verification failed, e.g. CRL, CA or signature check failed )
-2022-09-18T18:10:33 prefetch.2.8.0 sys: mbedtls_ssl_get_verify_result returned 0x8 (  !! The certificate is not correctly signed by the trusted CA  )
-2022-09-18T18:10:33 prefetch.2.8.0 err: path not found while resolving tree within virtual file system module - 'SRR5448191' cannot be found.
+6. I took screenshots of the first 10 lines of the Phytozome fasta and fastq files   
+
+7. I took screenshots of the list of downloaded SRR .sra files and the list of converted fastq files
+
+8. I took a screenshot of the first 10 lines of the converted fastq file
+
+9. I used scp to move these screenshots from my local storage to my hpcc directory (/mnt/home/manchego/PLB812/lab_assignments/assignment1/)
+
+10. I pushed all of these changes to my git repo 'PLB812'
