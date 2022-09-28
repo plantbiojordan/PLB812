@@ -1,0 +1,36 @@
+Jordan Manchego's Methods for Lab Assignment #2 (PLB812)
+
+1. The first thing I did was try to install fastqc using wget and unzipping that
+	compressed file. That did not work very well (could only use fastqc commands
+	inside the fastqc directory) so instead I activated my plb812 environment
+	and ran the line 
+
+	<conda install -c bioconda fastqc>
+
+	and that worked like a charm.
+
+
+2. To make sure it was successfully installed, I navigated into the directory
+	with my fastq files and successfully ran the command
+
+	<fastqc SRR5448192.fastq>.
+
+
+3. Next, I tested my fastqc installation in my environment by submitting a very
+	simple job script that, besides the necessary #SBATCH arguments and the 
+	paths to my working directory and conda environment, only contained the
+	line
+
+	<fastqc SRR5448193.fastq>
+
+	and it successfully completed.
+
+
+4. Then, I wrote run_fastqc.sh and submitted it to the HPCC but this was not
+	successful due to running out of storage. I will run the job script 
+	again from my scratch directory to make sure I have all my files
+	before we meet again for class next week.
+
+
+5. Lastly, I deactivated my conda environment, exited the dev-intel14-k20 node,
+	and logged out of the HPCC.
