@@ -1,0 +1,23 @@
+Methods for Lab Assignment 3
+Jordan Manchego - PLB812
+
+1. I started by using a simple loop to open all the fastqc .html files so I could look at
+	adapter content and sequence quality. The loop was:
+	for thing in *.html; do open ${thing}; done
+	
+2. I found that only a few files showed any adapter content at all, with only a slight
+	amount of that adapter, which was the Illumina Universal Adapter. I googled
+	this to find the sequence and found that I needed to use AGATCGGAAGAG based on
+	Illumina's website.
+	
+3. I wrote my job script so that it would loop through and perform cutadapt on all of
+	the fastq files first, then a second loop would run fastqc on all of the output files.
+	A third loop unzipped the results of running fastqc, and a fourth loop renamed the
+	.html files of each unzipped file because they were all named identically. The
+	fourth loop simply appended the name of the directory to the name of the .html file.
+	
+	I submitted this job script using the following line:
+	sbatch cutadapt_to_fastqc.sb
+	
+4. I used cp to bring all of the output_*.html files to 
+	PLB812/lab_assignments/assignment3/
