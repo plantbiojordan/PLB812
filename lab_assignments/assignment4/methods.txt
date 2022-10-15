@@ -1,0 +1,17 @@
+Jordan Manchego's methods for assignment 4 (PLB 812):
+
+1. I installed HISAT2, samtools, and gff using conda install -c bioconda <package>
+
+2. I converted the annotation file in my Phytozome directory from .gff3 to .gtf
+
+3. I extracted the splice site (.ss) and exon (.exon) files from the .gtf annotation file
+
+4. I built the indexes using hitsat2 and input my .exon, .ss, 2 .fastq (paired-end data) 
+	files, and reference genome file
+
+5. I used HISAT2 and samtools to generate .bam files for each pair of reads, saved each
+	output containing alignment results in a text file
+
+6. Finally, I used the output results to create the .csv table with information on
+	total read pairs and unique read pairs
+
