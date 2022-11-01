@@ -1,0 +1,52 @@
+Lab Assignment 5 Methods
+Jordan Manchego
+PLB 812 F22
+
+1. I started by updating my R and Rstudio, then I installed DESeq2 and tximport using
+	the R package manager BiocManager.
+	
+	
+2. I then created two tables: one for my gene count data and another for my metadata. 
+	
+	My gene count table contained the information output by htseq in lab assignment 4,
+	formatted with the gene_id in column one and the genotype's gene counts in columns
+	two through fourteen. The genotype name served as column headers (except for col one).
+	
+	In my metadata table, the first column housed the name of each genotype while the
+	control/drought condition and day_of_drought (0, 6, or 10) were housed in two additi-
+	onal columns. I factored the genotype, day_of_drought, and condition into my
+	metadata dataframe.
+	
+	Essentially, I used DESeq2's protocol for inputting matrix count data instead of
+	their protocol for htseq_count data. This meant I had to create the metadata table
+	myself, but it only took a few minutes. 
+	
+	
+3. Next, I created the DESeq2 object 'dds' using the ~ condition design to compare
+	differentially expressed genes between control and drought plants. I used my metadata
+	table as my colData.
+	
+
+4. I prefiltered my data to discard all gene counts equal to or lower than 10. Before, I
+	had 19982 rows in my DESeq2 dataframe. After, I had 18048. Next, I looked at the
+	library size adjustment using estimateSizeFactors(dds).
+	
+	
+5. From here, I moved on to quality control. 
+	
+	I plotted my estimate dispersions and they looked similar to the figure I saw in the 
+	slides. I also compared this plot before and after prefiltering and I saw a pretty big
+	difference in the point distribution.
+	
+	I then performed a variance stabilizing transformation and a regularized logarithm
+	before calculating the distance between each sample. All 3 values were used as inputs
+	to create a heatmap. My variance stabilizing transformation result was used to perform
+	PCA and I was able to see three distinct clusters of differential expression across
+	the genotypes.
+	
+	
+6. From here I called the differential expression function of DESeq2 by starting with
+	the Wald test to adjust significant p-values. I got a count of 4943 which seems high,
+	and my MA plot didn't look as narrow as the one shown on the slides. However, this
+	might be explained by the genes being expressed less differentially than the data
+	in the example plot. I saved my MA plot to my assignment5 folder.
