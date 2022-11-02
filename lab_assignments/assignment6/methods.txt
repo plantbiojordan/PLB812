@@ -1,0 +1,44 @@
+Lab Assignment 6 Methods
+Jordan Manchego
+PLB812 F22
+
+1. I started by installing topGO and GO.db in R using BiocManager, then I imported ggplot2.
+
+
+2. I switched over to my command line to create my topGO input file. I had to wrangle my
+	files in a way that differed from the instructions on the slide (I have no clue
+	why it didn't work for me... I checked 20 times for typos and it looked fine to
+	me). I used mostly the same code you provided, but I used additional separate
+	lines outside of the while loop to add commas between all entries, then replace
+	the 1st instance of ', ' with '\t' on each line to create the .tsv format.
+
+
+3. Once I got my topGO data formatted correctly, I created the topGO object 'goTerms'
+	using the topGO function readMappings.
+
+
+4. I read in my results table from lab assignment 5 which was created using DESeq2 and
+	contained a column for differentially expressed genes.
+
+
+5. I created a table of higher expressed genes by only keeping adjusted p-values below
+	0.05 and log2FC values equal to or above 1.0.
+
+
+6. I performed GO term enrichment on ontology Biological Processes by running the
+	Fisher enrichment test and saved these results to two tables:
+	
+	a table of higher expressed BP genes with an FDR score less than or equal
+	to 0.5, and
+
+	a table of lower expressed BP genes with an FDR score of above 0.05.
+
+
+7. I repeated the above step on ontology terms Molecular Functions and Cellular
+	Components. 6 tables total were created (although they were saved as .csv
+	originally, and when I tried to re-save them as .tsv sep="\t" but R did NOT 
+	like that and added weird question marks to the file names).
+
+
+8. I saved all 6 .csv tables to my assignment6/ directory and pushed everything to
+	GitHub.

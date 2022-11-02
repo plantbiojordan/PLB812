@@ -1,0 +1,27 @@
+GO.ID,Term,Annotated,Significant,Expected,Fisher,fdr
+GO:0003824,catalytic activity,5354,810,661.62,6.4e-19,4.8256e-16
+GO:0003677,DNA binding,893,89,110.35,1.3e-12,4.901e-10
+GO:0043167,ion binding,3549,489,438.56,1.9e-11,4.77533333333333e-09
+GO:0097367,carbohydrate derivative binding,1844,288,227.87,2.7e-11,5.0895e-09
+GO:1901265,nucleoside phosphate binding,2116,310,261.48,2.0e-09,3.016e-07
+GO:0036094,small molecule binding,2255,327,278.66,7.8e-09,9.802e-07
+GO:0016301,kinase activity,990,212,122.34,1.2e-08,1.29257142857143e-06
+GO:0004672,protein kinase activity,858,191,106.03,2.3e-07,2.16775e-05
+GO:0016740,transferase activity,2103,377,259.88,3.0e-06,0.000251333333333333
+GO:0016773,phosphotransferase activity, alcohol gro...,968,205,119.62,6.3e-06,0.00047502
+GO:0060089,molecular transducer activity,25,12,3.09,1.3e-05,0.000879666666666667
+GO:0035639,purine ribonucleoside triphosphate bindi...,1658,266,204.89,1.4e-05,0.000879666666666667
+GO:0005215,transporter activity,563,101,69.57,5.2e-05,0.003016
+GO:0030554,adenyl nucleotide binding,1605,270,198.34,7.9e-05,0.00425471428571429
+GO:0032559,adenyl ribonucleotide binding,1601,270,197.84,9.2e-05,0.00462453333333333
+GO:0032553,ribonucleotide binding,1824,286,225.4,0.00013,0.00612625
+GO:0140096,catalytic activity, acting on a protein,1528,275,188.82,0.00015,0.00665294117647059
+GO:0005506,iron ion binding,344,58,42.51,0.00021,0.00861714285714286
+GO:0008236,serine-type peptidase activity,128,29,15.82,0.00023,0.00861714285714286
+GO:0015276,ligand-gated ion channel activity,18,11,2.22,0.00023,0.00861714285714286
+GO:0017076,purine nucleotide binding,1805,284,223.05,0.00024,0.00861714285714286
+GO:0005524,ATP binding,1464,252,180.91,0.00027,0.00925363636363636
+GO:0140097,catalytic activity, acting on DNA,90,9,11.12,0.00049,0.0153816
+GO:0016759,cellulose synthase activity,7,7,0.87,0.00050,0.0153816
+GO:0016760,cellulose synthase (UDP-forming) activit...,7,7,0.87,0.00051,0.0153816
+GO:0003678,DNA helicase activity,26,6,3.21,0.00135,0.03915
