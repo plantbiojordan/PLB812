@@ -1,0 +1,62 @@
+Jordan Manchego's Methods for Lab Assignment 8
+PLB812 | November 16, 2022
+
+1. I began by cloning the gatk repo from GitHub and downloading picard.jar from the picard 
+	GitHub repo and saving both in the same directory as my A. thaliana genome .fa file 
+	and sorted .bam file from assignment 7.
+
+2. Next I tried to run MarkDuplicates but found I needed to sort my input bam file (again?)
+	and StackOverflow recommend using a function within picard.jar that looked like
+	
+	java -jar picard.jar SortSam \ 
+	I=aln-pe.bam \
+	O=sorted-alnpe.bam \
+	SORT_ORDER=coordinate 
+
+	then I was able to run MarkedDuplicates using
+
+	java -jar picard.jar MarkedDuplicates \
+	I=sorted_alnpe.bam \
+	O=marked_duplicates.bam \
+	M=marked_dup_metrics
+
+	which output marked_duplicates.bam and marked_dup_metrics.txt. I took a screen-
+	shot of 'head marked_dup_metrics.txt' and placed this in PLB812/lab_assignments/\
+	assignment8.
+
+3. In order to run AddOrReplaceReadGroups I had to generate Athaliana.fa.fai and
+	Athaliana.dict, which I only found out after running into errors with AddOrReplace-
+	ReadGroups. I'm honestly not sure if I configured something wrong when I indexed
+	the genome last week, but regardless, it didn't take long for samtools to
+	create these two new index files. I ran
+
+	samtools faidx Athaliana.fa
+
+	and
+
+	samtools index Athaliana.fa > Athaliana.dict
+
+	to create the .fai and .dict files, respectively. The default output for samtools
+	index is a .dict file, but I didn't see the file in my directory until I used >.
+
+4. I ran AddOrReplaceReadGroups as shown below.
+
+	java -jar picard.jar AddOrReplaceReadGroups \
+	I=marked_duplicates.bam \
+	O=addReadGroups.bam \ 
+	RGID=1 \
+	RGLB=lib1 \
+	RGPL=Illumina \
+	RGPU=NA \
+	RGSM=WS2
+
+5. Finally, I called the Haplotypes using
+
+	gatk-4.3.0.0/gatk --java-options "-Xmx4g" HaplotypeCaller \ # I git cloned gatk
+	-R Athaliana.fa \
+	-I=addReadGroups.bam \
+	-O=HaplotypeCaller.g.vcf.gz \ # I just wasn't feeling creative
+	-ERC GUCF
+
+	Then I took a screenshot of the first 20 lines of this file and placed it in
+	my assignment8 directory.
