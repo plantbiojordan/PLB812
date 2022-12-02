@@ -1,0 +1,27 @@
+Methods for PLB812 Lab Assignment #9
+by Jordan Manchego
+
+1. I created a new conda directory using the HPCC default Python version 3.10,
+	then installed orthofinder normally using conda and the channel bioconda, but I had
+	to install (through bioconda) diamond v. 0.9.14 to get orthofinder to run 
+	successfully.
+
+2. I used curl to download all 3 of the fasta files from Phytozome into my scratch
+	directory. I renamed these files as described in the protocol to make data processing
+	easier later in the workflow. I saved these in one directory by themselves.
+
+3. I then ran orthofinder by using the line 
+
+	orthofinder -f fastas
+	
+	where the fastas directory contained my 3 downloaded files from step #2.
+	
+4. Once orthofinder wrapped up I went into the directory
+	fastas/OrthoFinder/Results_Nov26/Phylogenetic_Hierarchical_Orthogroups/
+	and I used 'wc -l N0.tsv > results.txt' to save the number of lines from this file
+	(total 17406). I then searched for the orthologous gene 'AT5G13930' using the line:
+	
+	grep 'AT5G131930' N0.tsv >> results.txt
+	
+	which of course also appended the content of any lines (just 1) containing that gene 
+	name to the results.txt file that already existed and contained the number of lines.
